@@ -6,10 +6,9 @@
 epics:
 	$(QUIET)echo "EPICS_BASE=$(EPICS_BASE)"        > $(TOP)/$(E3_MODULE_SRC_PATH)/configure/RELEASE.local
 	$(QUIET)echo "CHECK_RELEASE = YES"              > $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
-	$(QUIET)echo "-include $(TOP)/configure/CONFIG_PVDATA_VERSION"  >> $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
+	$(QUIET)echo "-include $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_PVDATA_VERSION"  >> $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
 #	$(QUIET)echo "WITH_COVERAGE = 1"               >> $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
 #	$(QUIET)echo "INSTALL_LOCATION=$(M_DEVLIB2)"  >> $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE
-
 	$(SUDOBASH) "$(MAKE) -C $(E3_MODULE_SRC_PATH)"
 	
 
