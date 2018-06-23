@@ -8,7 +8,7 @@ epics:
 	$(QUIET)echo "CHECK_RELEASE = YES"              > $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
 	$(QUIET)echo "-include $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_PVDATA_VERSION"  >> $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
 #	$(QUIET)echo "WITH_COVERAGE = 1"               >> $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
-#	$(QUIET)echo "INSTALL_LOCATION=$(M_DEVLIB2)"  >> $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE
+	$(QUIET)echo "INSTALL_LOCATION=$(M_PVDATA)"    >> $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
 	$(SUDOBASH) "$(MAKE) -C $(E3_MODULE_SRC_PATH)"
 	
 
