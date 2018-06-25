@@ -1,5 +1,11 @@
+# We have to keep all header files in include/pv because there are some header files which have the same name
+# as other modules (base, others) header files.
+# Monday, June 25 19:16:46 CEST 2018, jhlee
+
 pv:
-	cd $(E3_MODULES_INSTALL_LOCATION_INC) && $(SUDO) ln -sn $(E3_MODULES_INSTALL_LOCATION_INC) pv
+#	cd $(E3_MODULES_INSTALL_LOCATION_INC) && $(SUDO) ln -sn $(E3_MODULES_INSTALL_LOCATION_INC) pv
+	$(SUDO) install -m 755 -d $(E3_MODULES_INSTALL_LOCATION_INC)/pv
+	cd $(E3_MODULES_INSTALL_LOCATION_INC) && $(SUDO) mv *.h pv/
 
 
 .PHONY: pv
