@@ -17,8 +17,8 @@
 # 
 # Author  : Jeong Han Lee
 # email   : jeonghan.lee@gmail.com
-# Date    : Saturday, June 23 22:52:15 CEST 2018
-# version : 0.0.1
+# Date    : Monday, June 25 02:09:06 CEST 2018
+# version : 0.0.2
 #
 where_am_I := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
@@ -79,8 +79,17 @@ SOURCES += $(MISC)/parseToPOD.cpp
 SOURCES += $(MISC)/pvUnitTest.cpp
 SOURCES += $(MISC)/debugPtr.cpp
 SOURCES += $(MISC)/reftrack.cpp
-SOURCES += $(MISC)/anyscalar.cpp
+#SOURCES += $(MISC)/anyscalar.cpp
 
+# anyscalar.cpp was introduced from 7.1.0-pre1
+# Thus, I added the additional logic
+# to handle to cover at least from 7.0.0 to 7.1.0-pre1
+# If there is no anyscalar.cpp, it is now safe to ignore it
+# Monday, June 25 02:06:29 CEST 2018, jhlee
+
+anyscalar_src=$(MISC)/anyscalar.cpp
+
+SOURCES += $(filter $(anyscalar_src), $(wildcard $(MISC)/*.cpp))
 
 
 # PV
