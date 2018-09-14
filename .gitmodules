@@ -1,4 +1,4 @@
 [submodule "pvDataCPP"]
 	path = pvDataCPP
 	url = https://github.com/epics-base/pvDataCPP
-	ignore = all
+	ignore = dirty
