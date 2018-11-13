@@ -17,14 +17,13 @@
 # 
 # Author  : Jeong Han Lee
 # email   : jeonghan.lee@gmail.com
-# Date    : Friday, September 14 09:49:38 CEST 2018
-# version : 0.0.3
+# Date    : Tuesday, November 13 13:16:33 CET 2018
+# version : 0.0.4
 #
 where_am_I := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 include $(E3_REQUIRE_TOOLS)/driver.makefile
-include $(where_am_I)/../configure/DECOUPLE_FLAGS
-
+include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
 include $(where_am_I)/configure/CONFIG_PVDATA_VERSION
 
 ## Exclude linux-ppc64e6500
